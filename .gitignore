@@ -35,9 +35,3 @@ out/
 
 ### VS Code ###
 .vscode/
-
-private-docs
-.claude
-update-docs
-claude.md
-workflow
