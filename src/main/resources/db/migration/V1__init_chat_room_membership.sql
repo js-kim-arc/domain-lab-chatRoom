@@ -23,7 +23,7 @@ CREATE TABLE membership (
                          THEN CONCAT('A:', user_id, ':', room_id)
                          ELSE CONCAT('L:', id)
                     END
-                ) STORED,
+                ),
 
     PRIMARY KEY (id),
     CONSTRAINT uk_membership_active UNIQUE (active_key),
