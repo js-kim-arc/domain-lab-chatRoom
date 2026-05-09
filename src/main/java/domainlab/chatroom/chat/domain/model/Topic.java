@@ -23,7 +23,7 @@ public class Topic {
     }
 
     public static Topic of(String rawValue) {
-        if (rawValue == null) {
+        if (rawValue == null || rawValue.isBlank()) {
             throw TopicDomainException.of(ErrorCode.TP001);
         }
         String normalized = normalize(rawValue);

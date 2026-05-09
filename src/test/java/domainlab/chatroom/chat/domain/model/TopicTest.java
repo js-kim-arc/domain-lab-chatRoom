@@ -85,6 +85,14 @@ class TopicTest {
     }
 
     @Test
+    @DisplayName("rawValue가 공백뿐이면 TP001 (API 스펙: blank 입력은 비어있는 것과 같이 거부)")
+    void of_blank_예외() {
+        assertThatThrownBy(() -> Topic.of("   "))
+                .isInstanceOf(TopicDomainException.class)
+                .extracting("errorCode").isEqualTo(ErrorCode.TP001);
+    }
+
+    @Test
     @DisplayName("정규화 후 결과가 빈 문자열이면 TP002")
     void of_정규화후_빈문자열_예외() {
         assertThatThrownBy(() -> Topic.of("!!!@@@"))
